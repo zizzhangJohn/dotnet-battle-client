@@ -1,7 +1,7 @@
 import Table from "react-bootstrap/Table"
 import Container from "react-bootstrap/Container"
 import { GlobalContext, User } from "../../GlobaContext"
-import { useContext, useState } from "react"
+import { useContext, useRef, useState } from "react"
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -15,6 +15,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 const CharactersPage = () => {
   const { user, setUser } = useContext(GlobalContext)
   const [validated, setValidated] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null)
   const [formData, setFormData] = useState({
     characterName: '',
     characterType: 'Knight',
@@ -33,10 +34,12 @@ const CharactersPage = () => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       setValidated(true);
-
     } else {
       if (import.meta.env.DEV) {
         console.log("Adding user: ", formData);
+      }
+      if (formRef.current) {
+        formRef.current.reset();
       }
       try {
         const addCharacterResponse = (await addCharacter(user!.jwt, formData.characterName, formData.characterType)).data
@@ -82,7 +85,7 @@ const CharactersPage = () => {
   return (
     <Container>
       <Form className="mt-4"
-        noValidate validated={validated} onSubmit={handleSubmit}>
+        noValidate validated={validated} onSubmit={handleSubmit} ref={formRef}>
         <Row className="mb-3">
           <Form.Group as={Col} md="3" controlId="validationCharacterName">
             <Form.Control

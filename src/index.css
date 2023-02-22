@@ -3,3 +3,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.homePage-offset {
+  margin-top: -4rem !important;
+}
+
+
+.list-element:hover {
+  background-color: #2469DA;
+  color: #fff;
+}
+
+.select-badges:hover {
+  background-color: #DC3545 !important;
+  border-color: #DC3545 !important;
+}
+
+.select-bar-icons {
+  color: #777;
+}
+
+.select-bar-icons:hover {
+  color: black
+}

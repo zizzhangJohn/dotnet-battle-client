@@ -2,39 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import LoginPage from './Routes/LoginPage';
-import CharactersPage from './Routes/CharactersPage';
-import FightPage from './Routes/FightPage';
-import Error from './Routes/ErrorPage';
-const router = createBrowserRouter([
-  {
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <LoginPage />,
-        errorElement: <Error />,
-      },
-      {
-        path: "fight",
-        element: <FightPage />,
-        errorElement: <Error />,
-      },
-      {
-        path: "characters",
-        element: <CharactersPage />,
-        errorElement: <Error />,
-      },
-    ],
-  },
-]);
+/*
+  React Bootstrap Configuration
+*/
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>,
 )

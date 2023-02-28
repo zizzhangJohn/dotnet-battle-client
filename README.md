@@ -3,11 +3,10 @@
 this is the frontend of [this project](https://github.com/zizzhangJohn/dotnet-rpg-battle)
 
 ## Installation
-Project is built with vite
-You need to include `.env.development` and `.env.production` in the root for dev server and production build.
+Project is built with vite, you need to include `.env.development` and `.env.production` in the root for dev server and production build.
 And add two environment variables to both of them
 
-`VITE_API_URL`: \<the Base API of your server\>
+`VITE_API_URL`: \<the Base URL of your server\>
 
 `VITE_GCLIENT_ID`: \<google web client ID\>
 

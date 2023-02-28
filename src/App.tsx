@@ -17,10 +17,13 @@ import NavBar from "./Components/NavBar";
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
+  const [fightResult, setFightResult] = useState<Array<string>>([]);
 
   return (
     <>
-      <GlobalContext.Provider value={{ user, setUser }}>
+      <GlobalContext.Provider
+        value={{ user, setUser, fightResult, setFightResult }}
+      >
         <BrowserRouter>
           <NavBar />
           <Routes>

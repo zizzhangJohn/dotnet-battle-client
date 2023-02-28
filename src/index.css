@@ -26,3 +26,13 @@
 .select-bar-icons:hover {
   color: black
 }
+
+.top-105{
+  top:calc(100% + .25em)
+}
+.input-divider{
+  width: 0.05em;
+  background-color: #777;
+  align-self: stretch;
+  margin: 0 0.5em;
+}

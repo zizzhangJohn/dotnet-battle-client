@@ -30,7 +30,7 @@ function SelectInput() {
       }
     }
   }
-  
+
   function selectToggle(character: ICharacter) {
     if (selectedCharacters.includes(character)) {
       // if selected, unselect it and update state
@@ -79,6 +79,9 @@ function SelectInput() {
     <>
       <div className="d-flex gap-2">
         <div
+          tabIndex={0}
+          onClick={() => setDropdownShow(true)}
+          onBlur={() => setDropdownShow(false)}
           className={`form-control p-2 d-flex align-items-center position-relative ${
             validateSelection ? "border-danger" : ""
           }`}
@@ -103,19 +106,22 @@ function SelectInput() {
           <RxCross2
             className="select-bar-icons"
             role="button"
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               setSelectedCharacters([]);
               setDropdownShow(false);
             }}
           />
-          <RxDividerVertical size={25} />
+          <div className="input-divider" />
           <FaCaretDown
             className="select-bar-icons"
             role="button"
-            onClick={() => setDropdownShow((pre) => !pre)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setDropdownShow((pre) => !pre)}}
           />
           <ul
-            className={`list-group w-100 position-absolute top-100 start-0 ${
+            className={`list-group w-100 position-absolute top-105 start-0 ${
               dropdownShow ? "" : "d-none"
             }`}
           >

@@ -87,7 +87,7 @@ const CharactersPage = () => {
       <Form className="mt-4"
         noValidate validated={validated} onSubmit={handleSubmit} ref={formRef}>
         <Row className="mb-3">
-          <Form.Group as={Col} md="3" controlId="validationCharacterName">
+          <Form.Group as={Col} className="mb-2 mb-md-0" md="3" controlId="validationCharacterName">
             <Form.Control
               name="characterName"
               required
@@ -99,7 +99,7 @@ const CharactersPage = () => {
               Please provide a character name.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationCharacterType">
+          <Form.Group as={Col} md="3" className="mb-2 mb-md-0" controlId="validationCharacterType">
             <Form.Control
               name="characterType"
               required
@@ -116,7 +116,7 @@ const CharactersPage = () => {
               Please choose a type.
             </Form.Control.Feedback>
           </Form.Group>
-          <Col><Button type="submit">Add</Button></Col>
+          <Form.Group as={Col} className="col-12 col-md-2 col-lg-1 mb-2 mb-md-0" controlId="validationCharacterType"><Button className="col-12" type="submit">Add</Button></ Form.Group>
         </Row>
       </Form>
       <Table striped responsive>

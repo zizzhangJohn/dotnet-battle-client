@@ -26,7 +26,7 @@ function ProfilePage() {
     if (!user) {
       return (
         <>
-          <div className="mx-auto">
+          <div className="text-center mx-auto">
             please sign in with google to use the app
           </div>
           {/* id="signInDiv" is specified for googlebutton rendering */}

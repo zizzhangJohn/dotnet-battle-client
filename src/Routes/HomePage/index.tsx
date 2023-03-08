@@ -10,7 +10,7 @@ const HomePage = () => {
         A ReactTS + .Net project <br /> inspired by Dungeons & Dragons
       </p>
       <Button
-        className="col-3 mx-auto mt-3"
+        className="col-10 col-md-3 mx-auto mt-3"
         variant="dark"
         onClick={() => navigate("fight")}
       >

@@ -77,7 +77,7 @@ function SelectInput() {
   }
   return (
     <>
-      <div className="d-flex gap-2">
+      <div className="d-flex flex-column-reverse flex-lg-row gap-2">
         <div
           tabIndex={0}
           onClick={() => setDropdownShow(true)}
@@ -90,7 +90,7 @@ function SelectInput() {
             {selectedCharacters.length > 0
               ? selectedCharacters.map((c) => (
                   <Button
-                    className="mx-1 pe-1 align-items-center select-badges"
+                    className="mx-1 my-1 align-items-center select-badges"
                     key={c.id}
                     onClick={(e) => {
                       e.stopPropagation();
